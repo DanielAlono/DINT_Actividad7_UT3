@@ -9,6 +9,32 @@
         Width="800"
         MinHeight="450"
         MinWidth="800">
+    <Window.Resources>
+        <Style TargetType="Image"
+               x:Key="info">
+            <Setter Property="Height"
+                    Value="20" />
+            <Setter Property="Margin"
+                    Value="0,4,4,4" />
+        </Style>
+        <Style TargetType="TextBox"
+               x:Key="datosPersonales">
+            <Setter Property="Margin"
+                    Value="5,5,0,5" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Width"
+                    Value="100" />
+            <Setter Property="Margin"
+                    Value="5" />
+        </Style>
+        <Style TargetType="GroupBox">
+            <Setter Property="Padding"
+                    Value="5,5,5,10" />
+            <Setter Property="Margin"
+                    Value="10" />
+        </Style>
+    </Window.Resources>
     <DockPanel>
         <DockPanel DockPanel.Dock="Bottom"
                    LastChildFill="False">
@@ -17,12 +43,8 @@
                        FontSize="20"
                        FontStyle="Italic"
                        Margin="5"></TextBlock>
-            <Button DockPanel.Dock="Right"
-                    Width="100"
-                    Margin="5">Calcelar</Button>
-            <Button DockPanel.Dock="Right"
-                    Width="100"
-                    Margin="5">Aceptar</Button>
+            <Button DockPanel.Dock="Right">Calcelar</Button>
+            <Button DockPanel.Dock="Right">Aceptar</Button>
         </DockPanel>
         <DockPanel DockPanel.Dock="Top">
             <TextBlock Text="Formulario"
@@ -35,7 +57,7 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Image Grid.Column="1"
-                Source="foto.jpg"
+                   Source="foto.jpg"
                    Stretch="Fill"
                    Margin="5,5,15,5"></Image>
             <DockPanel LastChildFill="False">
@@ -55,24 +77,21 @@
                                        Margin="5,7,5,5"></TextBlock>
                         </StackPanel>
                         <StackPanel DockPanel.Dock="Right">
-                            <Image Source="info.png"
-                                   Height="20"
-                                   Margin="0,4,4,4"
+                            <Image Style="{StaticResource info}"
+                                   Source="info.png"
                                    ToolTip="Máximo 100 caracteres">
                             </Image>
-                            <Image Source="info.png"
-                                   Height="20"
-                                   Margin="0,4,4,4"
-                                   ToolTip="Número entero entre 0 y 100"></Image>
-                            <Image Source="info.png"
-                                   Height="20"
-                                   Margin="0,4,4,4"
+                            <Image  Style="{StaticResource info}"
+                                    Source="info.png"
+                                    ToolTip="Número entero entre 0 y 100"></Image>
+                            <Image Style="{StaticResource info}"
+                                   Source="info.png"
                                    ToolTip="Máximo 100 caracteres"></Image>
                         </StackPanel>
                         <StackPanel>
-                            <TextBox Margin="5,5,0,5"></TextBox>
-                            <TextBox Margin="5,5,0,5"></TextBox>
-                            <TextBox Margin="5,5,0,5"></TextBox>
+                            <TextBox Style="{StaticResource datosPersonales}"></TextBox>
+                            <TextBox Style="{StaticResource datosPersonales}"></TextBox>
+                            <TextBox Style="{StaticResource datosPersonales}"></TextBox>
                         </StackPanel>
                     </DockPanel>
                     <Border.Effect>
@@ -87,9 +106,7 @@
                         Background="LightYellow">
                     <DockPanel LastChildFill="False">
                         <GroupBox DockPanel.Dock="Left"
-                                  Header="Aficiones"
-                                  Margin="10"
-                                  Padding="5,5,5,10">
+                                  Header="Aficiones">
                             <StackPanel Margin="5"
                                         Width="150">
                                 <CheckBox Content="Hacer deporte"></CheckBox>
@@ -99,9 +116,7 @@
                             </StackPanel>
                         </GroupBox>
                         <GroupBox DockPanel.Dock="Left"
-                                  Header="Estado Civil"
-                                  Margin="10"
-                                  Padding="5,5,5,10">
+                                  Header="Estado Civil">
                             <StackPanel Margin="5"
                                         Width="150">
                                 <RadioButton Content="Soltero"
