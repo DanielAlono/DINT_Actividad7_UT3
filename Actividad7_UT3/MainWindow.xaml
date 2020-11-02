@@ -9,32 +9,6 @@
         Width="800"
         MinHeight="450"
         MinWidth="800">
-    <Window.Resources>
-        <Style TargetType="Image"
-               x:Key="info">
-            <Setter Property="Height"
-                    Value="20" />
-            <Setter Property="Margin"
-                    Value="0,4,4,4" />
-        </Style>
-        <Style TargetType="TextBox"
-               x:Key="datosPersonales">
-            <Setter Property="Margin"
-                    Value="5,5,0,5" />
-        </Style>
-        <Style TargetType="Button">
-            <Setter Property="Width"
-                    Value="100" />
-            <Setter Property="Margin"
-                    Value="5" />
-        </Style>
-        <Style TargetType="GroupBox">
-            <Setter Property="Padding"
-                    Value="5,5,5,10" />
-            <Setter Property="Margin"
-                    Value="10" />
-        </Style>
-    </Window.Resources>
     <DockPanel>
         <DockPanel DockPanel.Dock="Bottom"
                    LastChildFill="False">
@@ -61,11 +35,9 @@
                    Stretch="Fill"
                    Margin="5,5,15,5"></Image>
             <DockPanel LastChildFill="False">
-                <Border DockPanel.Dock="Top"
+                <Border Style="{StaticResource miBorde}"
+                        DockPanel.Dock="Top"
                         Margin="5,5,5,15"
-                        BorderBrush="Black"
-                        BorderThickness="3"
-                        CornerRadius="3"
                         Background="LightBlue">
                     <DockPanel>
                         <StackPanel  DockPanel.Dock="Left">
@@ -78,14 +50,11 @@
                         </StackPanel>
                         <StackPanel DockPanel.Dock="Right">
                             <Image Style="{StaticResource info}"
-                                   Source="info.png"
                                    ToolTip="Máximo 100 caracteres">
                             </Image>
                             <Image  Style="{StaticResource info}"
-                                    Source="info.png"
                                     ToolTip="Número entero entre 0 y 100"></Image>
                             <Image Style="{StaticResource info}"
-                                   Source="info.png"
                                    ToolTip="Máximo 100 caracteres"></Image>
                         </StackPanel>
                         <StackPanel>
@@ -94,15 +63,10 @@
                             <TextBox Style="{StaticResource datosPersonales}"></TextBox>
                         </StackPanel>
                     </DockPanel>
-                    <Border.Effect>
-                        <DropShadowEffect></DropShadowEffect>
-                    </Border.Effect>
                 </Border>
-                <Border DockPanel.Dock="Top"
+                <Border Style="{StaticResource miBorde}"
+                        DockPanel.Dock="Top"
                         Margin="5,15,5,5"
-                        BorderBrush="Black"
-                        BorderThickness="3"
-                        CornerRadius="3"
                         Background="LightYellow">
                     <DockPanel LastChildFill="False">
                         <GroupBox DockPanel.Dock="Left"
@@ -127,9 +91,6 @@
                             </StackPanel>
                         </GroupBox>
                     </DockPanel>
-                    <Border.Effect>
-                        <DropShadowEffect></DropShadowEffect>
-                    </Border.Effect>
                 </Border>
             </DockPanel>
         </Grid>

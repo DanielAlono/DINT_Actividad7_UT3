@@ -4,6 +4,44 @@
              xmlns:local="clr-namespace:Actividad7_UT3"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="Border" x:Key="miBorde">
+            <Setter Property="BorderBrush"
+                    Value="Black" />
+            <Setter Property="BorderThickness"
+                    Value="3" />
+            <Setter Property="CornerRadius"
+                    Value="3" />
+            <Setter Property="Effect" >
+                <Setter.Value>
+                    <DropShadowEffect></DropShadowEffect>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Image"
+               x:Key="info">
+            <Setter Property="Height"
+                    Value="20" />
+            <Setter Property="Margin"
+                    Value="0,4,4,4" />
+            <Setter Property="Source"
+                    Value="info.png" />
+        </Style>
+        <Style TargetType="TextBox"
+               x:Key="datosPersonales">
+            <Setter Property="Margin"
+                    Value="5,5,0,5" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Width"
+                    Value="100" />
+            <Setter Property="Margin"
+                    Value="5" />
+        </Style>
+        <Style TargetType="GroupBox">
+            <Setter Property="Padding"
+                    Value="5,5,5,10" />
+            <Setter Property="Margin"
+                    Value="10" />
+        </Style>
     </Application.Resources>
 </Application>
